@@ -1,6 +1,6 @@
 export default function VideoAd() {
   return (
-    <section className="py-12 bg-gradient-to-b from-white to-pink-light">
+    <section className="py-12 bg-gradient-to-b from-white to-pink-light relative z-[10000]">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-dark">
