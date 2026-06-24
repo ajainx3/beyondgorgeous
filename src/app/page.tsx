@@ -1,6 +1,7 @@
 import HeroBanner from "@/components/HeroBanner";
 import CategoryBar from "@/components/CategoryBar";
 import ProductSection from "@/components/ProductSection";
+import VideoAd from "@/components/VideoAd";
 import { products } from "@/data/products";
 
 export default function Home() {
@@ -25,6 +26,9 @@ export default function Home() {
           products={deals}
         />
       </div>
+
+      {/* Video Ad */}
+      <VideoAd />
 
       {/* Bestsellers */}
       <ProductSection
