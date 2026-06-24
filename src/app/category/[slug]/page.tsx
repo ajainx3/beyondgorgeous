@@ -1,22 +1,27 @@
-import { notFound } from "next/navigation";
+"use client";
+
+import { useParams } from "next/navigation";
 import { categories, products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import Link from "next/link";
 
-interface CategoryPageProps {
-  params: Promise<{ slug: string }>;
-}
-
-export function generateStaticParams() {
-  return categories.map((cat) => ({ slug: cat.slug }));
-}
-
-export default async function CategoryPage({ params }: CategoryPageProps) {
-  const { slug } = await params;
+export default function CategoryPage() {
+  const params = useParams();
+  const slug = params.slug as string;
   const category = categories.find((c) => c.slug === slug);
 
   if (!category) {
-    notFound();
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <span className="text-6xl mb-4 block">😢</span>
+          <h2 className="text-xl font-bold text-gray-dark mb-2">Category not found</h2>
+          <Link href="/" className="inline-block bg-pink text-white px-6 py-3 rounded-full hover:bg-pink-dark transition-colors font-medium mt-4">
+            ← Back to Home
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   const categoryProducts = products.filter((p) => p.category === slug);
@@ -71,7 +76,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {categoryProducts.length > 0 ? (
           <>
-            {/* Sort/Filter bar */}
             <div className="flex items-center justify-between mb-6">
               <p className="text-sm text-gray-medium">
                 Showing <strong className="text-gray-dark">{categoryProducts.length}</strong> products
@@ -88,7 +92,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               </div>
             </div>
 
-            {/* Product Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
               {categoryProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
