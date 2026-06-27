@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BeyondGorgeous — UI Mockups</title>
+<style>
+  :root{--pink:#E80071;--pink-light:#FCE4EC;--pink-dark:#C2185B;--ink:#1f2430;--muted:#6b7280;--line:#e5e7eb;--green:#0f8a0f;--bg:#f6f7fb}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1040px;margin:0 auto;padding:28px 18px 80px}
+  .hero-head{background:var(--pink);color:#fff;border-radius:16px;padding:26px 28px;margin-bottom:24px}
+  .hero-head h1{margin:0 0 4px;font-size:26px}
+  .hero-head p{margin:0;opacity:.92}
+  .pill{display:inline-block;background:rgba(255,255,255,.2);border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;margin-top:8px}
+  h2{font-size:20px;margin:30px 0 6px}
+  .lead{color:var(--muted);margin:0 0 16px;max-width:70ch}
+  .frame{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 1px 3px rgba(16,24,40,.06);overflow:hidden;margin:0 0 26px}
+  .frame .bar{background:#f3f4f6;border-bottom:1px solid var(--line);padding:7px 12px;display:flex;align-items:center;gap:6px}
+  .frame .bar i{width:10px;height:10px;border-radius:50%;background:#d1d5db;display:inline-block}
+  .frame .url{flex:1;text-align:center;font-size:12px;color:var(--muted)}
+  .cap{font-weight:600;margin:0 0 4px}
+  .cap span{color:var(--muted);font-weight:400;font-size:13.5px}
+  /* branded screen bits */
+  .scr{font-size:14px}
+  .promo{background:var(--pink);color:#fff;text-align:center;font-size:12.5px;padding:6px}
+  .top{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--line)}
+  .logo{font-weight:700;color:var(--pink);font-size:18px}
+  .logo b{color:var(--ink)}
+  .search{flex:1;border:1px solid var(--line);border-radius:8px;padding:8px 12px;color:var(--muted);font-size:13px}
+  .icons{display:flex;gap:12px;color:var(--muted)}
+  .nav{display:flex;gap:16px;padding:8px 16px;border-bottom:1px solid var(--line);font-size:13px;color:#374151;overflow:auto}
+  .banner{background:linear-gradient(120deg,#fde7f0,#fcd5e6);margin:14px 16px;border-radius:12px;padding:26px;text-align:center}
+  .banner h3{margin:0 0 4px;font-size:22px;color:var(--pink-dark)}
+  .banner p{margin:0 0 12px;color:#6b3a52}
+  .btn{background:var(--pink);color:#fff;border:none;border-radius:999px;padding:9px 20px;font-weight:600;font-size:13px;cursor:default}
+  .btn.lg{padding:12px 26px;font-size:14px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:14px 16px}
+  .pc{border:1px solid var(--line);border-radius:10px;padding:10px}
+  .pc .img{height:90px;background:var(--pink-light);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:34px}
+  .pc .br{font-size:10px;letter-spacing:.5px;color:var(--muted);text-transform:uppercase;margin-top:8px}
+  .pc .nm{font-size:12.5px;line-height:1.3;height:32px;overflow:hidden}
+  .rate{display:inline-block;background:var(--green);color:#fff;font-size:10px;border-radius:4px;padding:1px 5px}
+  .price{font-weight:700}.strike{color:var(--muted);text-decoration:line-through;font-weight:400;font-size:12px}
+  .off{color:var(--pink);font-size:12px}
+  .sectitle{padding:6px 16px;font-weight:700}
+  /* product detail */
+  .pd{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:16px}
+  .pd .gallery{background:var(--pink-light);border-radius:12px;height:260px;display:flex;align-items:center;justify-content:center;font-size:90px}
+  .swatch{width:26px;height:26px;border-radius:50%;display:inline-block;margin-right:6px;border:2px solid #fff;outline:1px solid var(--line)}
+  .crumb{font-size:12px;color:var(--muted);padding:10px 16px 0}
+  .tabs{display:flex;gap:18px;border-bottom:1px solid var(--line);margin:14px 16px 0;font-size:13px}
+  .tabs span{padding:8px 0;border-bottom:2px solid transparent;color:var(--muted)}
+  .tabs span.on{color:var(--pink);border-color:var(--pink);font-weight:600}
+  /* checkout */
+  .co{display:grid;grid-template-columns:1.4fr .9fr;gap:18px;padding:16px}
+  .steps{display:flex;gap:10px;font-size:12px;color:var(--muted);padding:12px 16px 0}
+  .steps b{color:var(--pink)}
+  .field{border:1px solid var(--line);border-radius:8px;padding:9px 11px;color:var(--muted);font-size:13px;margin-bottom:8px}
+  .pay{border:1px solid var(--line);border-radius:8px;padding:10px;margin-bottom:8px;display:flex;align-items:center;gap:8px;font-size:13px}
+  .pay.sel{border-color:var(--pink);background:var(--pink-light)}
+  .sumbox{background:#fafafa;border:1px solid var(--line);border-radius:10px;padding:14px;font-size:13px}
+  .sumrow{display:flex;justify-content:space-between;margin-bottom:6px}
+  /* wireframes */
+  .screens{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .wf-frame{display:flex;flex-direction:column;gap:6px}
+  .wf-cap{font-size:13px;font-weight:600}.wf-purpose{font-size:12px;color:var(--muted);margin:0}
+  .wf{border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;padding:10px;height:280px;overflow:hidden;display:flex;flex-direction:column;gap:8px}
+  .wf .hd{display:flex;justify-content:space-between;align-items:center}
+  .wf .logo2{width:64px;height:14px;background:#94a3b8;border-radius:4px}
+  .wf .navw{display:flex;gap:5px}.wf .navw i{width:30px;height:8px;background:#cbd5e1;border-radius:4px}
+  .wf .herow{height:60px;background:#e2e8f0;border-radius:6px}
+  .wf .line{height:7px;background:#e2e8f0;border-radius:3px}
+  .wf .btnw{height:16px;background:#94a3b8;border-radius:5px}
+  .wf .pillw{height:10px;background:#e2e8f0;border-radius:999px}
+  .wf .gridw{display:grid;gap:6px}
+  .wf .cardw{background:#fff;border:1px solid #e2e8f0;border-radius:6px;padding:6px;display:flex;flex-direction:column;gap:4px}
+  .wf .thumb{height:36px;background:#e2e8f0;border-radius:4px}
+  .wf .box{background:#fff;border:1px solid #e2e8f0;border-radius:6px;flex:1}
+  .wf .ft{margin-top:auto;height:16px;background:#e2e8f0;border-radius:4px}
+  .wf .col{display:flex;flex-direction:column;gap:6px}
+  .wf .side{width:56px;background:#e2e8f0;border-radius:6px}
+  .note{background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:12px 16px;color:#7c4a13;font-size:13.5px;margin:8px 0 20px}
+  @media (max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.pd,.co{grid-template-columns:1fr}}
+  @media print{body{background:#fff}.frame{break-inside:avoid}.screens{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero-head">
+    <h1>BeyondGorgeous — UI Mockups</h1>
+    <p>Screen designs for client review and sign-off, before build.</p>
+    <span class="pill">Mockups v0.1.0 · aligned with design spec v0.4.0</span>
+  </div>
+
+  <p class="lead">This document presents the planned screens in two fidelities. <b>Branded hero screens</b> show the visual direction (brand colours, layout, tone). <b>Wireframes</b> cover every remaining screen in low fidelity — deliberately grayscale so review focuses on layout and flow. Sign-off here freezes scope before expensive build begins.</p>
+
+  <div class="note">📌 These are mockups, not the live site. They illustrate intended layouts; copy, imagery and exact styling are finalised during the visual-design stage.</div>
+
+  <h2>1 · Branded hero screens</h2>
+  <p class="lead">Medium-fidelity, in the BeyondGorgeous brand (pink <code>#E80071</code>).</p>
+
+  <p class="cap">Home <span>— first impression, merchandising, key paths in</span></p>
+  <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="url">beyondgorgeous.in</span></div>
+    <div class="scr">
+      <div class="promo">✨ FREE shipping over ₹499 · Use code GORGEOUS20 for 20% off</div>
+      <div class="top"><div class="logo">Beyond<b>Gorgeous</b></div><div class="search">Search for products, brands and more…</div><div class="icons">👤 ❤ 🛍️</div></div>
+      <div class="nav"><span>Makeup</span><span>Skincare</span><span>Hair</span><span>Bath &amp; Body</span><span>Fragrances</span><span>Appliances</span><span>Men</span><span>Natural</span></div>
+      <div class="banner"><h3>Makeup Festival</h3><p>Buy 2 Get 1 Free on premium brands</p><button class="btn lg">Grab Deals →</button></div>
+      <div class="sectitle">Bestsellers</div>
+      <div class="grid">
+        <div class="pc"><div class="img">💄</div><div class="br">Beyond Gorgeous</div><div class="nm">Matte Revolution Lipstick — Ruby</div><div><span class="rate">★ 4.5</span></div><div><span class="price">₹599</span> <span class="strike">₹899</span> <span class="off">33% off</span></div></div>
+        <div class="pc"><div class="img">🧴</div><div class="br">Beyond Gorgeous</div><div class="nm">Glow Serum Vitamin C 30ml</div><div><span class="rate">★ 4.6</span></div><div><span class="price">₹749</span> <span class="strike">₹999</span> <span class="off">25% off</span></div></div>
+        <div class="pc"><div class="img">💅</div><div class="br">Beyond Gorgeous</div><div class="nm">Gel Nail Lacquer — Blush</div><div><span class="rate">★ 4.3</span></div><div><span class="price">₹299</span> <span class="strike">₹449</span> <span class="off">33% off</span></div></div>
+        <div class="pc"><div class="img">🌸</div><div class="br">Beyond Gorgeous</div><div class="nm">Eau de Parfum — Bloom 50ml</div><div><span class="rate">★ 4.7</span></div><div><span class="price">₹1,299</span> <span class="strike">₹1,899</span> <span class="off">32% off</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="cap">Product detail <span>— variants, price, add to bag, trust signals</span></p>
+  <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="url">beyondgorgeous.in/product/matte-revolution-lipstick-ruby</span></div>
+    <div class="scr">
+      <div class="crumb">Home › Makeup › Lips › Lipstick › Matte Revolution</div>
+      <div class="pd">
+        <div class="gallery">💄</div>
+        <div>
+          <div class="br" style="color:var(--muted);font-size:11px;letter-spacing:.5px">BEYOND GORGEOUS</div>
+          <h3 style="margin:4px 0">Matte Revolution Lipstick</h3>
+          <div style="margin:6px 0"><span class="rate">★ 4.5</span> <span style="color:var(--muted);font-size:12px">· 1,248 reviews</span></div>
+          <div style="margin:8px 0"><span class="price" style="font-size:22px">₹599</span> <span class="strike">₹899</span> <span class="off">33% off</span></div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:6px">Shade: Ruby</div>
+          <div style="margin-bottom:14px"><span class="swatch" style="background:#b3123a"></span><span class="swatch" style="background:#7a1f3d"></span><span class="swatch" style="background:#d36"></span><span class="swatch" style="background:#a0522d"></span></div>
+          <button class="btn lg">Add to Bag</button>
+          <div style="font-size:12px;color:var(--muted);margin-top:12px">🚚 Delivery by Tomorrow · 💳 COD available · 🔄 Easy returns</div>
+        </div>
+      </div>
+      <div class="tabs"><span class="on">Description</span><span>How to use</span><span>Ingredients</span><span>Reviews</span></div>
+      <div style="padding:12px 16px;font-size:13px;color:#374151">A long-wear, full-coverage matte lipstick with a weightless feel…</div>
+    </div>
+  </div>
+
+  <p class="cap">Checkout <span>— address, payment incl. COD, order summary</span></p>
+  <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="url">beyondgorgeous.in/checkout</span></div>
+    <div class="scr">
+      <div class="steps"><b>1 Address</b> → <b>2 Payment</b> → <span>3 Confirm</span></div>
+      <div class="co">
+        <div>
+          <div style="font-weight:600;margin-bottom:8px">Delivery address</div>
+          <div class="field">Full name</div><div class="field">Phone number</div><div class="field">Address line, area</div>
+          <div style="display:flex;gap:8px"><div class="field" style="flex:1">Pincode ✓ serviceable</div><div class="field" style="flex:1">City</div></div>
+          <div style="font-weight:600;margin:12px 0 8px">Payment method</div>
+          <div class="pay sel">🟢 Cash on Delivery <span style="color:var(--muted);margin-left:auto">Pay when delivered</span></div>
+          <div class="pay">▢ UPI</div>
+          <div class="pay">▢ Credit / Debit card</div>
+          <div class="pay">▢ Wallets / Net banking</div>
+        </div>
+        <div class="sumbox">
+          <div style="font-weight:600;margin-bottom:10px">Order summary</div>
+          <div class="sumrow"><span>Matte Lipstick — Ruby</span><span>₹599</span></div>
+          <div class="sumrow"><span>Glow Serum 30ml</span><span>₹749</span></div>
+          <div class="sumrow"><span>Discount (GORGEOUS20)</span><span style="color:var(--green)">−₹270</span></div>
+          <div class="sumrow"><span>Shipping</span><span>FREE</span></div>
+          <div class="sumrow" style="font-weight:700;border-top:1px solid var(--line);padding-top:8px"><span>Total (incl. GST)</span><span>₹1,078</span></div>
+          <button class="btn lg" style="width:100%;margin-top:12px">Place Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>2 · All screens — wireframes</h2>
+  <p class="lead">Low-fidelity layout for every screen, grouped by area. The full set keeps scope explicit and complete.</p>
+  <div id="screens" class="screens"></div>
+
+  <p style="text-align:center;color:var(--muted);font-size:12.5px;margin-top:26px">BeyondGorgeous · UI Mockups v0.1.0 · for client review &amp; sign-off (Gate B)</p>
+</div>
+
+<script>
+(function(){
+  function rep(fn,n){var s='';for(var i=0;i<n;i++)s+=fn(i);return s;}
+  function H(){return '<div class="hd"><div class="logo2"></div><div class="navw"><i></i><i></i><i></i></div></div>';}
+  function card(){return '<div class="cardw"><div class="thumb"></div><div class="line" style="width:80%"></div><div class="line" style="width:50%"></div></div>';}
+  function lines(n,w){return rep(function(i){return '<div class="line" style="width:'+(w||[90,70,80,55,65][i%5])+'%"></div>';},n);}
+  var WF={
+    home:function(){return H()+'<div class="herow"></div><div class="gridw" style="grid-template-columns:repeat(4,1fr)">'+rep(card,4)+'</div><div class="gridw" style="grid-template-columns:repeat(4,1fr)">'+rep(card,4)+'</div><div class="ft"></div>';},
+    listing:function(){return H()+'<div style="display:flex;gap:8px;flex:1"><div class="side col" style="width:66px;padding:6px;gap:5px">'+lines(6,80)+'</div><div class="gridw" style="grid-template-columns:repeat(3,1fr);flex:1">'+rep(card,6)+'</div></div>';},
+    product:function(){return H()+'<div style="display:flex;gap:8px"><div class="box" style="flex:1.1;min-height:84px"></div><div class="col" style="flex:1">'+lines(2,90)+'<div class="line" style="width:40%;height:12px"></div><div style="display:flex;gap:5px">'+rep(function(){return '<div class="pillw" style="width:20px"></div>';},4)+'</div>'+lines(2,80)+'<div class="btnw" style="width:70%"></div></div></div><div class="line" style="width:30%"></div><div class="gridw" style="grid-template-columns:repeat(3,1fr)">'+rep(card,3)+'</div>';},
+    search:function(){return H()+'<div class="pillw" style="height:16px"></div><div style="display:flex;gap:8px;flex:1"><div class="side" style="width:56px"></div><div class="gridw" style="grid-template-columns:repeat(3,1fr);flex:1">'+rep(card,6)+'</div></div>';},
+    cart:function(){return H()+'<div style="display:flex;gap:8px;flex:1"><div class="col" style="flex:1.4">'+rep(function(){return '<div class="cardw" style="flex-direction:row;align-items:center;gap:6px"><div class="thumb" style="width:34px;height:28px"></div><div class="col" style="flex:1">'+lines(2,70)+'</div><div class="pillw" style="width:28px"></div></div>';},3)+'</div><div class="box col" style="flex:.8;padding:8px;gap:6px">'+lines(3,80)+'<div class="btnw"></div></div></div>';},
+    checkout:function(){return H()+'<div style="display:flex;gap:8px;flex:1"><div class="col" style="flex:1.3;gap:5px"><div class="line" style="width:40%;height:10px"></div>'+lines(3,90)+'<div class="line" style="width:40%;height:10px"></div><div style="display:flex;gap:5px">'+rep(function(){return '<div class="pillw" style="width:42px;height:16px"></div>';},4)+'</div></div><div class="box col" style="flex:.8;padding:8px;gap:6px">'+lines(3,80)+'<div class="btnw"></div></div></div>';},
+    confirmation:function(){return H()+'<div class="col" style="align-items:center;gap:8px;flex:1;justify-content:center"><div class="thumb" style="width:38px;height:38px;border-radius:50%"></div><div class="line" style="width:50%;height:10px"></div>'+lines(2,40)+'<div class="box" style="width:80%;height:44px;flex:none"></div></div>';},
+    tracking:function(){return H()+'<div class="line" style="width:40%;height:10px"></div><div style="display:flex;gap:6px;padding:6px 0">'+rep(function(){return '<div class="thumb" style="flex:1;height:8px"></div>';},4)+'</div><div class="col" style="flex:1;gap:5px">'+lines(4,90)+'</div>';},
+    login:function(){return H()+'<div class="col" style="flex:1;justify-content:center;align-items:center;gap:8px"><div class="box col" style="width:70%;flex:none;padding:12px;gap:8px"><div class="line" style="width:50%;height:10px"></div>'+lines(2,100)+'<div class="btnw"></div><div class="line" style="width:60%"></div></div></div>';},
+    account:function(){return H()+'<div style="display:flex;gap:5px">'+rep(function(){return '<div class="pillw" style="width:44px"></div>';},4)+'</div><div class="col" style="flex:1;gap:5px">'+rep(function(){return '<div class="cardw" style="flex-direction:row;gap:6px"><div class="thumb" style="width:28px;height:22px"></div><div class="col" style="flex:1">'+lines(2,60)+'</div></div>';},4)+'</div>';},
+    wishlist:function(){return H()+'<div class="line" style="width:30%;height:10px"></div><div class="gridw" style="grid-template-columns:repeat(3,1fr);flex:1">'+rep(card,6)+'</div>';},
+    returns:function(){return H()+'<div class="line" style="width:40%;height:10px"></div><div class="col" style="flex:1;gap:6px">'+lines(1,80)+'<div class="pillw" style="height:16px;width:90%"></div>'+lines(2,90)+'<div class="btnw" style="width:50%"></div></div>';},
+    adminDash:function(){return '<div style="display:flex;gap:8px;flex:1"><div class="side"></div><div class="col" style="flex:1;gap:6px"><div class="hd"><div class="line" style="width:30%"></div><div class="pillw" style="width:38px"></div></div><div class="gridw" style="grid-template-columns:repeat(3,1fr)">'+rep(function(){return '<div class="box" style="height:30px;flex:none"></div>';},3)+'</div>'+lines(5,100)+'</div></div>';},
+    adminList:function(){return '<div style="display:flex;gap:8px;flex:1"><div class="side"></div><div class="col" style="flex:1;gap:6px"><div class="hd"><div class="line" style="width:30%"></div><div class="btnw" style="width:56px"></div></div>'+rep(function(){return '<div class="cardw" style="flex-direction:row;gap:6px;align-items:center"><div class="thumb" style="width:22px;height:16px"></div><div class="line" style="width:55%"></div><div class="pillw" style="width:28px;margin-left:auto"></div></div>';},5)+'</div></div>';},
+    adminEdit:function(){return '<div style="display:flex;gap:8px;flex:1"><div class="side"></div><div class="col" style="flex:1;gap:6px"><div class="line" style="width:30%;height:10px"></div><div style="display:flex;gap:8px;flex:1"><div class="col" style="flex:1.3;gap:6px">'+lines(5,90)+'</div><div class="box" style="flex:.7"></div></div><div class="btnw" style="width:40%"></div></div></div>';},
+    bloglist:function(){return H()+'<div class="col" style="flex:1;gap:6px">'+rep(function(){return '<div class="cardw" style="flex-direction:row;gap:8px"><div class="thumb" style="width:46px;height:32px"></div><div class="col" style="flex:1">'+lines(3,80)+'</div></div>';},3)+'</div>';},
+    blogpost:function(){return H()+'<div class="line" style="width:60%;height:12px"></div><div class="herow"></div><div class="col" style="gap:5px">'+lines(6,95)+'</div>';},
+    generic:function(){return H()+'<div class="line" style="width:35%;height:11px"></div><div class="col" style="gap:5px;flex:1">'+lines(6,95)+'</div><div class="ft"></div>';}
+  };
+  var SCREENS=[
+    ['Home','Storefront','First impression &amp; merchandising','home'],
+    ['Category / listing','Storefront','Browse with filters &amp; sort','listing'],
+    ['Product detail','Storefront','Variants, price, add to bag','product'],
+    ['Search results','Storefront','Find products fast','search'],
+    ['Cart','Storefront','Review before checkout','cart'],
+    ['Checkout','Storefront','Address, payment, COD','checkout'],
+    ['Order confirmation','Storefront','Reassurance &amp; next steps','confirmation'],
+    ['Order tracking','Account','Status &amp; delivery updates','tracking'],
+    ['Login / OTP','Account','Phone-OTP sign-in','login'],
+    ['Account &amp; orders','Account','History, addresses','account'],
+    ['Wishlist','Account','Saved items','wishlist'],
+    ['Returns request','Account','Start a return / RMA','returns'],
+    ['Admin — dashboard','Admin','Operations overview','adminDash'],
+    ['Admin — products','Admin','Manage catalogue','adminList'],
+    ['Admin — product editor','Admin','Add / edit product &amp; variants','adminEdit'],
+    ['Admin — orders','Admin','Process &amp; fulfil','adminList'],
+    ['Admin — inventory','Admin','Stock, reorder, batches','adminList'],
+    ['Blog list','Content','Content hub for SEO','bloglist'],
+    ['Blog post','Content','Article page','blogpost'],
+    ['Legal &amp; policy pages','Content','Privacy, terms, refund, shipping','generic'],
+    ['404 / error','Content','Graceful dead-ends','generic']
+  ];
+  document.getElementById('screens').innerHTML=SCREENS.map(function(s){
+    return '<div class="wf-frame"><div class="wf-cap">'+s[0]+' <span style="color:#6b7280;font-weight:400">· '+s[1]+'</span></div><div class="wf">'+(WF[s[3]]||WF.generic)()+'</div><p class="wf-purpose">'+s[2]+'</p></div>';
+  }).join('');
+})();
+</script>
+</body>
+</html>

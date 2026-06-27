@@ -1,0 +1,94 @@
+<svg width="100%" viewBox="0 0 680 556" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>BeyondGorgeous layered architecture</title>
+<desc>Layered diagram: actors, the Next.js edge, a modular application core, an integration layer, an async backbone, data stores, and external partners. Pink boxes are owned by BeyondGorgeous, teal are external partners, gray is infrastructure.</desc>
+<defs>
+<marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#888780"/></marker>
+</defs>
+<g font-family="ui-sans-serif, system-ui, sans-serif">
+<rect x="20" y="10" width="12" height="12" rx="3" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="38" y="20" font-size="11" fill="#2C2C2A">you own</text>
+<rect x="120" y="10" width="12" height="12" rx="3" fill="#E1F5EE" stroke="#1D9E75"/>
+<text x="138" y="20" font-size="11" fill="#2C2C2A">external partner</text>
+<rect x="262" y="10" width="12" height="12" rx="3" fill="#F1EFE8" stroke="#888780"/>
+<text x="280" y="20" font-size="11" fill="#2C2C2A">infrastructure</text>
+<text x="20" y="44" font-size="11" fill="#5F5E5A">who uses it</text>
+<rect x="20" y="50" width="145" height="48" rx="4" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="92" y="72" font-size="13" font-weight="500" fill="#4B1528" text-anchor="middle">Customers</text>
+<text x="92" y="88" font-size="11" fill="#993556" text-anchor="middle">shop &amp; track orders</text>
+<rect x="185" y="50" width="145" height="48" rx="4" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="257" y="72" font-size="13" font-weight="500" fill="#4B1528" text-anchor="middle">You — admin</text>
+<text x="257" y="88" font-size="11" fill="#993556" text-anchor="middle">manage catalog</text>
+<rect x="350" y="50" width="145" height="48" rx="4" fill="#E1F5EE" stroke="#1D9E75"/>
+<text x="422" y="72" font-size="13" font-weight="500" fill="#04342C" text-anchor="middle">Vendors</text>
+<text x="422" y="88" font-size="11" fill="#0F6E56" text-anchor="middle">produce &amp; ship</text>
+<rect x="515" y="50" width="145" height="48" rx="4" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="587" y="72" font-size="13" font-weight="500" fill="#4B1528" text-anchor="middle">Support agents</text>
+<text x="587" y="88" font-size="11" fill="#993556" text-anchor="middle">handle tickets</text>
+<text x="20" y="116" font-size="11" fill="#5F5E5A">edge</text>
+<rect x="20" y="122" width="640" height="36" rx="4" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="340" y="140" font-size="13" font-weight="500" fill="#4B1528" text-anchor="middle">Storefront + admin UI</text>
+<text x="340" y="153" font-size="11" fill="#993556" text-anchor="middle">Next.js on Cloudflare Workers</text>
+<text x="20" y="176" font-size="11" fill="#5F5E5A">application core — one worker, modular</text>
+<rect x="20" y="182" width="145" height="52" rx="4" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="92" y="206" font-size="13" font-weight="500" fill="#4B1528" text-anchor="middle">Catalog</text>
+<text x="92" y="222" font-size="11" fill="#993556" text-anchor="middle">products, variants</text>
+<rect x="185" y="182" width="145" height="52" rx="4" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="257" y="206" font-size="13" font-weight="500" fill="#4B1528" text-anchor="middle">Cart &amp; orders</text>
+<text x="257" y="222" font-size="11" fill="#993556" text-anchor="middle">checkout, payments</text>
+<rect x="350" y="182" width="145" height="52" rx="4" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="422" y="206" font-size="13" font-weight="500" fill="#4B1528" text-anchor="middle">Customers</text>
+<text x="422" y="222" font-size="11" fill="#993556" text-anchor="middle">auth, profiles</text>
+<rect x="515" y="182" width="145" height="52" rx="4" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="587" y="206" font-size="13" font-weight="500" fill="#4B1528" text-anchor="middle">Support &amp; AI</text>
+<text x="587" y="222" font-size="11" fill="#993556" text-anchor="middle">chatbot, tickets</text>
+<text x="20" y="252" font-size="11" fill="#5F5E5A">integration layer — your adapters</text>
+<rect x="20" y="258" width="145" height="52" rx="4" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="92" y="282" font-size="13" font-weight="500" fill="#4B1528" text-anchor="middle">Vendor adapters</text>
+<text x="92" y="298" font-size="11" fill="#993556" text-anchor="middle">per-vendor connectors</text>
+<rect x="185" y="258" width="145" height="52" rx="4" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="257" y="282" font-size="13" font-weight="500" fill="#4B1528" text-anchor="middle">Payments</text>
+<text x="257" y="298" font-size="11" fill="#993556" text-anchor="middle">Razorpay</text>
+<rect x="350" y="258" width="145" height="52" rx="4" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="422" y="282" font-size="13" font-weight="500" fill="#4B1528" text-anchor="middle">Shipping</text>
+<text x="422" y="298" font-size="11" fill="#993556" text-anchor="middle">courier tracking</text>
+<rect x="515" y="258" width="145" height="52" rx="4" fill="#FBEAF0" stroke="#D4537E"/>
+<text x="587" y="282" font-size="13" font-weight="500" fill="#4B1528" text-anchor="middle">AI + Jira</text>
+<text x="587" y="298" font-size="11" fill="#993556" text-anchor="middle">Claude, tickets</text>
+<text x="20" y="330" font-size="11" fill="#5F5E5A">async backbone</text>
+<rect x="20" y="336" width="310" height="38" rx="4" fill="#F1EFE8" stroke="#888780"/>
+<text x="175" y="354" font-size="13" font-weight="500" fill="#2C2C2A" text-anchor="middle">Queues</text>
+<text x="175" y="368" font-size="11" fill="#5F5E5A" text-anchor="middle">async jobs, retries</text>
+<rect x="350" y="336" width="310" height="38" rx="4" fill="#F1EFE8" stroke="#888780"/>
+<text x="505" y="354" font-size="13" font-weight="500" fill="#2C2C2A" text-anchor="middle">Cron triggers</text>
+<text x="505" y="368" font-size="11" fill="#5F5E5A" text-anchor="middle">scheduled vendor sync</text>
+<text x="20" y="392" font-size="11" fill="#5F5E5A">data stores</text>
+<rect x="20" y="398" width="200" height="48" rx="4" fill="#F1EFE8" stroke="#888780"/>
+<text x="120" y="420" font-size="13" font-weight="500" fill="#2C2C2A" text-anchor="middle">D1 — SQL</text>
+<text x="120" y="436" font-size="11" fill="#5F5E5A" text-anchor="middle">catalog, orders, users</text>
+<rect x="240" y="398" width="200" height="48" rx="4" fill="#F1EFE8" stroke="#888780"/>
+<text x="340" y="420" font-size="13" font-weight="500" fill="#2C2C2A" text-anchor="middle">R2 — storage</text>
+<text x="340" y="436" font-size="11" fill="#5F5E5A" text-anchor="middle">product images</text>
+<rect x="460" y="398" width="200" height="48" rx="4" fill="#F1EFE8" stroke="#888780"/>
+<text x="560" y="420" font-size="13" font-weight="500" fill="#2C2C2A" text-anchor="middle">KV — cache</text>
+<text x="560" y="436" font-size="11" fill="#5F5E5A" text-anchor="middle">sessions, flags</text>
+<text x="20" y="466" font-size="11" fill="#5F5E5A">external partners</text>
+<rect x="20" y="472" width="145" height="48" rx="4" fill="#E1F5EE" stroke="#1D9E75"/>
+<text x="92" y="494" font-size="13" font-weight="500" fill="#04342C" text-anchor="middle">Vendor systems</text>
+<text x="92" y="510" font-size="11" fill="#0F6E56" text-anchor="middle">BO International</text>
+<rect x="185" y="472" width="145" height="48" rx="4" fill="#E1F5EE" stroke="#1D9E75"/>
+<text x="257" y="494" font-size="13" font-weight="500" fill="#04342C" text-anchor="middle">Razorpay</text>
+<text x="257" y="510" font-size="11" fill="#0F6E56" text-anchor="middle">UPI, cards</text>
+<rect x="350" y="472" width="145" height="48" rx="4" fill="#E1F5EE" stroke="#1D9E75"/>
+<text x="422" y="494" font-size="13" font-weight="500" fill="#04342C" text-anchor="middle">Courier APIs</text>
+<text x="422" y="510" font-size="11" fill="#0F6E56" text-anchor="middle">Delhivery, Shiprocket</text>
+<rect x="515" y="472" width="145" height="48" rx="4" fill="#E1F5EE" stroke="#1D9E75"/>
+<text x="587" y="494" font-size="13" font-weight="500" fill="#04342C" text-anchor="middle">Jira Cloud</text>
+<text x="587" y="510" font-size="11" fill="#0F6E56" text-anchor="middle">support tickets</text>
+<line x1="340" y1="98" x2="340" y2="120" stroke="#888780" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="340" y1="158" x2="340" y2="180" stroke="#888780" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="340" y1="234" x2="340" y2="256" stroke="#888780" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="340" y1="310" x2="340" y2="334" stroke="#888780" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="340" y1="374" x2="340" y2="396" stroke="#888780" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="340" y1="446" x2="340" y2="470" stroke="#888780" stroke-width="1.5" marker-end="url(#ah)"/>
+</g>
+</svg>

@@ -1,0 +1,14 @@
+<svg width="100%" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BeyondGorgeous banner">
+  <rect width="1200" height="300" fill="#E80071"/>
+  <rect x="0" y="0" width="1200" height="300" fill="#C2185B" opacity="0"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="80" y="140" font-size="68" font-weight="700" fill="#ffffff">Beyond<tspan fill="#FCE4EC">Gorgeous</tspan></text>
+    <text x="82" y="186" font-size="26" fill="#FCE4EC">Beauty &amp; cosmetics, online — a private-label e-commerce platform</text>
+    <text x="82" y="232" font-size="20" fill="#ffffff" opacity="0.92">Live at beyondgorgeous.in · Built on Cloudflare · Next.js</text>
+  </g>
+  <g fill="#ffffff" opacity="0.18">
+    <circle cx="1040" cy="80" r="60"/>
+    <circle cx="1120" cy="200" r="38"/>
+    <circle cx="980" cy="220" r="26"/>
+  </g>
+</svg>
