@@ -42,7 +42,7 @@ This repository contains the storefront code **and** a complete, versioned desig
 | 📖 **[Technical Overview](docs/TECHNICAL-OVERVIEW.md)** | A readable, presentable summary of the architecture, subsystems, and roadmap. **Start here.** |
 | 🏛️ **[Architecture Specification](docs/ARCHITECTURE.md)** | The full, versioned technical reference (26 sections) — the deep spec. |
 | 🖼️ **[UI Mockups](docs/UI-Mockups.html)** | Wireframes for every screen + branded hero designs. *Download and open in a browser.* |
-| 📄 **[Design &amp; Roadmap (Word)](docs/BeyondGorgeous-Design-and-Roadmap.docx)** | Project-manager-grade document: scope, milestones, risks, sign-off plan. *Download to view.* |
+| 📄 **[Design &amp; Roadmap (PDF)](docs/BeyondGorgeous-Design-and-Roadmap.pdf)** | Project-manager-grade document: scope, milestones, risks, sign-off plan. *Opens in your browser.* ([Word version](docs/BeyondGorgeous-Design-and-Roadmap.docx) for download.) |
 
 ---
 
