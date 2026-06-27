@@ -39,3 +39,23 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Cloudflare Workers / Wrangler — local secrets & cache (NEVER commit)
+.dev.vars
+.dev.vars.*
+.wrangler/
+
+# extra secrets & credentials (NEVER commit)
+*.key
+*.p12
+*.pfx
+id_rsa*
+.npmrc
+*.local
+secrets.json
+service-account*.json
+
+# editors / OS
+.idea/
+.vscode/
+Thumbs.db
